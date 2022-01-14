@@ -101,7 +101,11 @@ const App = {
 
 
          this.lessonToday = this.lessons.filter(function (item, index, array) {
-            return array[index].lessonStart.getDate() === toDay.getDate()
+            return (
+               array[index].lessonStart.getDate() === toDay.getDate()
+               && array[index].lessonStart.getMonth() === toDay.getMonth()
+               && array[index].lessonStart.getFullYear() === toDay.getFullYear()
+            )
          })
 
       },
