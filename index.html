@@ -52,6 +52,40 @@
                <img src="/icons/swich_btn.svg" alt="a">
             </button>
          </div>
+         <div class="calendar">
+            <div class="calendar__date">
+               <div class="date-day ">ПН</div>
+               <div class="date-day">ВТ</div>
+               <div class="date-day">СР</div>
+               <div class="date-day">ЧТ</div>
+               <div class="date-day">ПТ</div>
+               <div class="date-day red">СБ</div>
+               <div class="date-day red">ВС</div>
+            </div>
+            <div class="calendar__date_namber-box">
+               <div class="calendar__date_namber-box_wrapper ">
+
+                  <button class="date-namber " v-for="elem in calendar"
+                     :style="{visibility: elem == 0 ? 'hidden' : 'visible' }" @click="switchDateFromCalendar(elem)"
+                     :style="{visibility: elem == 0 ? 'hidden' : 'visible' }"
+                     :class="elem == toDayStatic.getDate() ? 'animation'  : '0'"
+                     :class="elem == toDayStatic.getDate() ? 'animation'  : '0'">
+                     {{elem}}
+                  </button>
+
+               </div>
+               <div class="lesson-type">
+                  <div class="lesson-type__lecture">
+                     <div class="lesson-type__lecture_color"></div>
+                     <div class="lesson-type__lecture_name"> - ЛЕКЦИЯ</div>
+                  </div>
+                  <div class="lesson-type__exam">
+                     <div class="lesson-type__exam_color"></div>
+                     <div class="lesson-type__exam_name">- ЭКЗАМЕН/ЗАЧЕТ</div>
+                  </div>
+               </div>
+            </div>
+         </div>
          <div class="timetable__lessons">
             <div class="timetable__lessons_number">
                <div class="timetable__lessons_number_slot " v-for="(time, i) in lessonToday">{{i+1}}</div>
@@ -80,37 +114,7 @@
             </div>
          </div>
 
-         <div class="calendar" id="app">
-            <div class="calendar__date">
-               <div class="date-day">ПН</div>
-               <div class="date-day">ВТ</div>
-               <div class="date-day">СР</div>
-               <div class="date-day">ЧТ</div>
-               <div class="date-day">ПТ</div>
-               <div class="date-day red">СБ</div>
-               <div class="date-day red">ВС</div>
-            </div>
-            <div class="calendar__date_namber-box">
-               <div class="calendar__date_namber-box_wrapper ">
 
-                  <button class="date-namber" v-for="elem in calendar"
-                     :style="{visibility: elem == 0 ? 'hidden' : 'visible' }" @click="switchDateFromCalendar(elem)">
-                     {{elem}}
-                  </button>
-
-               </div>
-               <div class="lesson-type">
-                  <div class="lesson-type__lecture">
-                     <div class="lesson-type__lecture_color"></div>
-                     <div class="lesson-type__lecture_name"> - ЛЕКЦИЯ</div>
-                  </div>
-                  <div class="lesson-type__exam">
-                     <div class="lesson-type__exam_color"></div>
-                     <div class="lesson-type__exam_name">- ЭКЗАМЕН/ЗАЧЕТ</div>
-                  </div>
-               </div>
-            </div>
-         </div>
       </div>
    </div>
 

@@ -311,7 +311,9 @@ const App = {
          toDay: new Date,
          lessonToday: [],
          calendar: [],
-         toDayStatic: new Date
+         toDayStatic: new Date,
+         lectureDays: [],
+         examDays: [],
 
 
 
@@ -437,6 +439,11 @@ const App = {
          this.calendarInit(this.toDay)
          this.getdayOfWeek()
          this.getLesonToday(this.toDay)
+      },
+      getLectureDays() {
+         this.lessons.forEach(element => {
+
+         });
       }
 
    },
