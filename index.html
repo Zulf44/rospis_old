@@ -91,9 +91,12 @@
                <div class="date-day red">ВС</div>
             </div>
             <div class="calendar__date_namber-box">
-               <div class="calendar__date_namber-box_wrapper " v-on:click="elemPLUS">
+               <div class="calendar__date_namber-box_wrapper ">
 
-                  <div class="date-namber" v-for="elem in 35">{{elem}}</div>
+                  <button class="date-namber" v-for="elem in calendar"
+                     :style="{visibility: elem == 0 ? 'hidden' : 'visible' }" @click="switchDateFromCalendar(elem)">
+                     {{elem}}
+                  </button>
 
                </div>
                <div class="lesson-type">
@@ -103,7 +106,7 @@
                   </div>
                   <div class="lesson-type__exam">
                      <div class="lesson-type__exam_color"></div>
-                     <div class="lesson-type__exam_name">- ЭКЗАМЕН</div>
+                     <div class="lesson-type__exam_name">- ЭКЗАМЕН/ЗАЧЕТ</div>
                   </div>
                </div>
             </div>
