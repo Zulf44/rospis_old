@@ -314,7 +314,9 @@ const App = {
          toDayStatic: new Date,
          lectureDays: [],
          examDays: [],
-
+         calendarSwitchButtonPosition: 0,
+         counter: 0,
+         width: 0,
 
 
       }
@@ -444,13 +446,32 @@ const App = {
          this.lessons.forEach(element => {
 
          });
-      }
+      },
+      switchCalendarSwitchButtonPosition() {
+         if (this.calendarSwitchButtonPosition == 0) {
+            this.calendarSwitchButtonPosition = 1
+         } else if (this.calendarSwitchButtonPosition == 1) {
+            this.calendarSwitchButtonPosition = 0
+         }
+         console.log(this.calendarSwitchButtonPosition)
+      },
+      counterPLUS() {
+         this.counter++;
+         console.log(this.counter)
+
+      },
+      updateWidth() {
+         this.width = window.innerWidth;
+         console.log(this.width)
+      },
 
    },
    mounted() {
       this.calendarInit(this.toDay)
       this.getdayOfWeek()
       this.getLesonToday(this.toDay)
+      this.updateWidth()
+
    }
 
 
@@ -557,7 +578,6 @@ Vue.createApp(App).mount("#app")
 //    w = w.substring(20, -20);
 //    console.log(w)
 // }
-
 
 
 
