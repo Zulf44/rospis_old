@@ -181,14 +181,14 @@ const App = {
             },
             {
                lessonStart: new Date(2022, 0, 26, 9, 40),
-               lessonName: "доц. Андреев В.В.",
+               lessonName: "Объектно-ориентированное программирование на языке C#",
                classroom: "В-621",
                teacher: "Низямова А.Р.",
                lessonType: "Практика"
             },
             {
                lessonStart: new Date(2022, 0, 26, 11, 20),
-               lessonName: "преп. Низямова А.Р.",
+               lessonName: "Базы данных",
                classroom: "Д-427",
                teacher: "доц. Николаева С.Г.",
                lessonType: "Практика"
